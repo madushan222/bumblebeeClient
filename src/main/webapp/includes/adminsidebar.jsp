@@ -18,6 +18,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <!DOCTYPE html>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -212,7 +213,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">GoCheeta</a>
+			<a class="navbar-brand" href="#">BumbleBee</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
