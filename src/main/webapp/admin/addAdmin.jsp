@@ -146,9 +146,9 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                             <td><%out.println(adm.getNic());%></td>
                             <td><%out.println(adm.getEmail());%></td>
                             <td><%out.println(adm.getMobile());%></td>
-                            <td><a href="../common/deleteUser.jsp?userType=ADMIN&userId=<%out.println(adm.getUserId());%>" title="View"><i class="fa fa-eye" style="color:green;"></i></a></td>
-                            <td><%%><a href="editAdmin.jsp?userId=<%out.println(adm.getUserId());%>" title="Edit"><i class="fa fa-pencil"></i></a></td>
-                            <td><a href="../common/deleteUser.jsp?userType=ADMIN&userId=<%out.println(adm.getUserId());%>" title="Delete"><i class="fa fa-trash" style="color:red;"></i></a></td>
+                            <td><a href="viewEditAdmin.jsp?action=VIEW&userId=<%out.println(adm.getUserId());%>" title="View"><i class="fa fa-eye" style="color:green;"></i></a></td>
+                            <td><%%><a href="viewEditAdmin.jsp?action=EDIT&userId=<%out.println(adm.getUserId());%>" title="Edit"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="../common/deleteUser.jsp?userType=A&userId=<%out.println(adm.getUserId());%>" title="Delete"><i class="fa fa-trash" style="color:red;"></i></a></td>
                             </tbody>
                         </tr>
                         <%}

@@ -4,21 +4,39 @@
 
 <xs:element name="addUserResponse" type="tns:addUserResponse"/>
 
+<xs:element name="deleteUser" type="tns:deleteUser"/>
+
+<xs:element name="deleteUserResponse" type="tns:deleteUserResponse"/>
+
+<xs:element name="getAdmin" type="tns:getAdmin"/>
+
+<xs:element name="getAdminResponse" type="tns:getAdminResponse"/>
+
 <xs:element name="getAdmins" type="tns:getAdmins"/>
 
 <xs:element name="getAdminsResponse" type="tns:getAdminsResponse"/>
+
+<xs:element name="getCustomers" type="tns:getCustomers"/>
+
+<xs:element name="getCustomersResponse" type="tns:getCustomersResponse"/>
 
 <xs:element name="hello" type="tns:hello"/>
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
 
-<xs:complexType name="getAdmins">
-<xs:sequence/>
+<xs:element name="updateAdmin" type="tns:updateAdmin"/>
+
+<xs:element name="updateAdminResponse" type="tns:updateAdminResponse"/>
+
+<xs:complexType name="getAdmin">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getAdminsResponse">
+<xs:complexType name="getAdminResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:user" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -41,6 +59,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getAdmins">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAdminsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="hello">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -53,6 +81,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="deleteUser">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addUser">
 <xs:sequence>
 <xs:element name="user" type="tns:user" minOccurs="0"/>
@@ -60,6 +100,28 @@
 </xs:complexType>
 
 <xs:complexType name="addUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCustomers">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCustomersResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateAdmin">
+<xs:sequence>
+<xs:element name="admin" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateAdminResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
