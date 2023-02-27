@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://shanlk/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://shanlk/">
+
+<xs:element name="addBrand" type="tns:addBrand"/>
+
+<xs:element name="addBrandResponse" type="tns:addBrandResponse"/>
+
+<xs:element name="addCategory" type="tns:addCategory"/>
+
+<xs:element name="addCategoryResponse" type="tns:addCategoryResponse"/>
+
+<xs:element name="deleteBrand" type="tns:deleteBrand"/>
+
+<xs:element name="deleteBrandResponse" type="tns:deleteBrandResponse"/>
+
+<xs:element name="deleteCategory" type="tns:deleteCategory"/>
+
+<xs:element name="deleteCategoryResponse" type="tns:deleteCategoryResponse"/>
+
+<xs:element name="getBrand" type="tns:getBrand"/>
+
+<xs:element name="getBrandResponse" type="tns:getBrandResponse"/>
+
+<xs:element name="getBrands" type="tns:getBrands"/>
+
+<xs:element name="getBrandsResponse" type="tns:getBrandsResponse"/>
+
+<xs:element name="getCategories" type="tns:getCategories"/>
+
+<xs:element name="getCategoriesResponse" type="tns:getCategoriesResponse"/>
+
+<xs:element name="getCategory" type="tns:getCategory"/>
+
+<xs:element name="getCategoryResponse" type="tns:getCategoryResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="updateBrand" type="tns:updateBrand"/>
+
+<xs:element name="updateBrandResponse" type="tns:updateBrandResponse"/>
+
+<xs:element name="updateCategory" type="tns:updateCategory"/>
+
+<xs:element name="updateCategoryResponse" type="tns:updateCategoryResponse"/>
+
+<xs:element name="updateStatus" type="tns:updateStatus"/>
+
+<xs:element name="updateStatusResponse" type="tns:updateStatusResponse"/>
+
+<xs:complexType name="addCategory">
+<xs:sequence>
+<xs:element name="category" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="added_date" type="xs:string" minOccurs="0"/>
+<xs:element name="cat_id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCategory">
+<xs:sequence>
+<xs:element name="cat_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBrand">
+<xs:sequence>
+<xs:element name="brand" type="tns:brand" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="brand">
+<xs:sequence>
+<xs:element name="brand_id" type="xs:int" minOccurs="0"/>
+<xs:element name="cat_id" type="xs:int" minOccurs="0"/>
+<xs:element name="cat_name" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategory">
+<xs:sequence>
+<xs:element name="cat_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCategory">
+<xs:sequence>
+<xs:element name="category" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrand">
+<xs:sequence>
+<xs:element name="brand_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brand" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBrand">
+<xs:sequence>
+<xs:element name="brand" type="tns:brand" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateStatus">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateStatusResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategories">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCategoriesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBrand">
+<xs:sequence>
+<xs:element name="brand_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrands">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBrandsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brand" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

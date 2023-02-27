@@ -18,5 +18,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <netbeans.hint.jdkPlatform>Zulu_8.0.345_1</netbeans.hint.jdkPlatform>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_UserService>http://localhost:8080/bumblebeeServices/UserService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_UserService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_LoginService>http://localhost:8080/bumblebeeServices/LoginService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_LoginService>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_InventoryService>http://localhost:8080/bumblebeeServices/InventoryService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_InventoryService>
     </properties>
 </project-shared-configuration>
