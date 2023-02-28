@@ -8,6 +8,10 @@
 
 <xs:element name="addCategoryResponse" type="tns:addCategoryResponse"/>
 
+<xs:element name="addProduct" type="tns:addProduct"/>
+
+<xs:element name="addProductResponse" type="tns:addProductResponse"/>
+
 <xs:element name="deleteBrand" type="tns:deleteBrand"/>
 
 <xs:element name="deleteBrandResponse" type="tns:deleteBrandResponse"/>
@@ -16,11 +20,19 @@
 
 <xs:element name="deleteCategoryResponse" type="tns:deleteCategoryResponse"/>
 
+<xs:element name="deleteProduct" type="tns:deleteProduct"/>
+
+<xs:element name="deleteProductResponse" type="tns:deleteProductResponse"/>
+
 <xs:element name="getBrand" type="tns:getBrand"/>
 
 <xs:element name="getBrandResponse" type="tns:getBrandResponse"/>
 
 <xs:element name="getBrands" type="tns:getBrands"/>
+
+<xs:element name="getBrandsByCatId" type="tns:getBrandsByCatId"/>
+
+<xs:element name="getBrandsByCatIdResponse" type="tns:getBrandsByCatIdResponse"/>
 
 <xs:element name="getBrandsResponse" type="tns:getBrandsResponse"/>
 
@@ -31,6 +43,14 @@
 <xs:element name="getCategory" type="tns:getCategory"/>
 
 <xs:element name="getCategoryResponse" type="tns:getCategoryResponse"/>
+
+<xs:element name="getProduct" type="tns:getProduct"/>
+
+<xs:element name="getProductResponse" type="tns:getProductResponse"/>
+
+<xs:element name="getProducts" type="tns:getProducts"/>
+
+<xs:element name="getProductsResponse" type="tns:getProductsResponse"/>
 
 <xs:element name="hello" type="tns:hello"/>
 
@@ -44,52 +64,45 @@
 
 <xs:element name="updateCategoryResponse" type="tns:updateCategoryResponse"/>
 
+<xs:element name="updateProduct" type="tns:updateProduct"/>
+
+<xs:element name="updateProductResponse" type="tns:updateProductResponse"/>
+
 <xs:element name="updateStatus" type="tns:updateStatus"/>
 
 <xs:element name="updateStatusResponse" type="tns:updateStatusResponse"/>
 
-<xs:complexType name="addCategory">
+<xs:complexType name="deleteProduct">
 <xs:sequence>
-<xs:element name="category" type="tns:category" minOccurs="0"/>
+<xs:element name="product_id" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="category">
+<xs:complexType name="deleteProductResponse">
 <xs:sequence>
-<xs:element name="added_date" type="xs:string" minOccurs="0"/>
-<xs:element name="cat_id" type="xs:int"/>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProducts">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getProductsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:product" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="brand_id" type="xs:int" minOccurs="0"/>
+<xs:element name="brand_name" type="xs:string" minOccurs="0"/>
+<xs:element name="cat_id" type="xs:int" minOccurs="0"/>
+<xs:element name="cat_name" type="xs:string" minOccurs="0"/>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="product_id" type="xs:int" minOccurs="0"/>
 <xs:element name="status" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCategoryResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="deleteCategory">
-<xs:sequence>
-<xs:element name="cat_id" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="deleteCategoryResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="hello">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="helloResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -115,51 +128,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getCategory">
+<xs:complexType name="hello">
 <xs:sequence>
-<xs:element name="cat_id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getCategoryResponse">
+<xs:complexType name="helloResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:category" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateCategory">
-<xs:sequence>
-<xs:element name="category" type="tns:category" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateCategoryResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getBrand">
-<xs:sequence>
-<xs:element name="brand_id" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getBrandResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:brand" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateBrand">
-<xs:sequence>
-<xs:element name="brand" type="tns:brand" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateBrandResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -188,6 +165,15 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="added_date" type="xs:string" minOccurs="0"/>
+<xs:element name="cat_id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="deleteBrand">
 <xs:sequence>
 <xs:element name="brand_id" type="xs:int"/>
@@ -200,6 +186,114 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addCategory">
+<xs:sequence>
+<xs:element name="category" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCategory">
+<xs:sequence>
+<xs:element name="cat_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrandsByCatId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrandsByCatIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brand" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategory">
+<xs:sequence>
+<xs:element name="cat_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCategory">
+<xs:sequence>
+<xs:element name="category" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBrand">
+<xs:sequence>
+<xs:element name="brand" type="tns:brand" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrand">
+<xs:sequence>
+<xs:element name="brand_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrandResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:brand" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateProduct">
+<xs:sequence>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProduct">
+<xs:sequence>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getBrands">
 <xs:sequence/>
 </xs:complexType>
@@ -207,6 +301,18 @@
 <xs:complexType name="getBrandsResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:brand" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProduct">
+<xs:sequence>
+<xs:element name="product_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:product" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
