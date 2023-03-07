@@ -119,7 +119,7 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
               </div>
             </div>
             <hr>
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>User ID</th>
@@ -128,7 +128,7 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         <th>NIC</th>
                         <th>Email</th>
                         <th>Mobile</th>
-                        <th></th>
+                        <th colspan="3">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -138,8 +138,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         List<User> admins = proxy.getAdmins();
                         int row = 0;
                         for(User adm : admins){%>
+                        <tbody>
                         <tr <%if(row%2 == 0){%> class="info" <%}%>>
-                            <tbody>
                             <td><%out.println(adm.getUserId());%></td>
                             <td><%out.println(adm.getFName());%> <%out.println(adm.getLName());%></td>
                             <td><%out.println(adm.getDob());%></td>
@@ -149,9 +149,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                             <td><a href="viewEditAdmin.jsp?action=VIEW&userId=<%out.println(adm.getUserId());%>" title="View"><i class="fa fa-eye" style="color:green;"></i></a></td>
                             <td><%%><a href="viewEditAdmin.jsp?action=EDIT&userId=<%out.println(adm.getUserId());%>" title="Edit"><i class="fa fa-pencil"></i></a></td>
                             <td><a href="../common/deleteUser.jsp?userType=A&userId=<%out.println(adm.getUserId());%>" title="Delete"><i class="fa fa-trash" style="color:red;"></i></a></td>
-                            </tbody>
                         </tr>
-                        <%}
+                        <%row++;}
                     %>
                 </tbody>
             </table>

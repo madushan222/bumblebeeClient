@@ -64,7 +64,7 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                     <h4 class="modal-title">Add Product</h4>
                   </div>
                   <div class="modal-body">
-                    <form action="productReg.jsp" method="POST">
+                    <form action="productReg.jsp" method="POST" enctype="multipart/form-data">
                          <div class="form-group">
                           <label for="cat_id">Select Category:</label>
                           <select class="form-control" name="cat_id" id="cat_id" onchange="load_brands(this.value)" required>
@@ -83,10 +83,10 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                           <label for="product_name">Product Name:</label>
                           <input type="text" class="form-control" id="product_name" name="product_name" autocomplete="off" required>
                         </div>
-<!--                        <div class="form-group">
+                        <div class="form-group">
                           <label for="product_name">Images:</label>
                           <input type="file" class="form-control" id="product_images[]" name="product_images[]" autocomplete="off" accept="image/*" multiple>
-                        </div>-->
+                        </div>
                   </div>
                   <div class="modal-footer">
                     <input type="submit" class="btn btn-default" value="Add">
@@ -98,7 +98,7 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
               </div>
             </div>
             <hr>
-            <table class="table table-bordered">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Product ID</th>
@@ -106,7 +106,7 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         <th>Brand Name</th>
                         <th>Product Name</th>
                         <th>Status</th>
-                        <th colspan="3">Actions</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -114,8 +114,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         List<Product> products = proxy.getProducts();
                         int row = 0;
                         for(Product product : products){%>
-                        <tbody>
                         <tr <%if(row%2 == 0){%> class="info" <%}%>>
+                            <tbody>
                             <td><%out.println(product.getProductId());%></td>
                             <td><%out.println(product.getCatName());%></td>
                             <td><%out.println(product.getBrandName());%></td>
@@ -128,8 +128,9 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                                     <a href="deleteProduct.jsp?productId=<%out.println(product.getProductId());%>" title="Delete"><i class="fa fa-trash" style="color:red;"></i></a>
                                 <%}%>
                             </td>
+                            </tbody>
                         </tr>
-                        <%row++;}
+                        <%}
                     %>
                 </tbody>
             </table>

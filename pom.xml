@@ -147,6 +147,42 @@
                         <id>wsimport-generate-InventoryService</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/bumblebeeServices/LoanService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/bumblebeeServices/LoanService?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/LoanService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-LoanService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/bumblebeeServices/ReportService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/bumblebeeServices/ReportService?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/ReportService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-ReportService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>

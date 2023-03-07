@@ -88,14 +88,14 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
               </div>
             </div>
             <hr>
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Brand ID</th>
                         <th>Category Name</th>
                         <th>Brand Name</th>
                         <th>Status</th>
-                        <th></th>
+                        <th colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,8 +103,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         List<Brand> brands = proxy.getBrands();
                         int row = 0;
                         for(Brand brand : brands){%>
+                        <tbody>
                         <tr <%if(row%2 == 0){%> class="info" <%}%>>
-                            <tbody>
                             <td><%out.println(brand.getBrandId());%></td>
                             <td><%out.println(brand.getCatName());%></td>
                             <td><%out.println(brand.getName());%></td>
@@ -115,9 +115,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                                     <a href="deleteBrand.jsp?brandId=<%out.println(brand.getBrandId());%>" title="Delete"><i class="fa fa-trash" style="color:red;"></i></a>
                                 <%}%>
                             </td>
-                            </tbody>
                         </tr>
-                        <%}
+                        <%row++;}
                     %>
                 </tbody>
             </table>
