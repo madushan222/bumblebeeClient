@@ -8,9 +8,45 @@
 
 <xs:element name="getCollectionDateRangeResponse" type="tns:getCollectionDateRangeResponse"/>
 
+<xs:element name="getDayCollection" type="tns:getDayCollection"/>
+
+<xs:element name="getDayCollectionResponse" type="tns:getDayCollectionResponse"/>
+
+<xs:element name="getTotalCustomers" type="tns:getTotalCustomers"/>
+
+<xs:element name="getTotalCustomersResponse" type="tns:getTotalCustomersResponse"/>
+
+<xs:element name="getTotalLoans" type="tns:getTotalLoans"/>
+
+<xs:element name="getTotalLoansResponse" type="tns:getTotalLoansResponse"/>
+
+<xs:element name="getTotalProducts" type="tns:getTotalProducts"/>
+
+<xs:element name="getTotalProductsResponse" type="tns:getTotalProductsResponse"/>
+
 <xs:element name="hello" type="tns:hello"/>
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="getTotalCustomers">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalCustomersResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTotalProducts">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalProductsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="hello">
 <xs:sequence>
@@ -21,6 +57,18 @@
 <xs:complexType name="helloResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDayCollection">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDayCollectionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -66,6 +114,16 @@
 <xs:element name="product_name" type="xs:string" minOccurs="0"/>
 <xs:element name="start_date" type="xs:string" minOccurs="0"/>
 <xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTotalLoans">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalLoansResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

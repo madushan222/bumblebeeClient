@@ -4,11 +4,17 @@
 <xsd:import namespace="http://shanlk/" schemaLocation="http://localhost:8080/bumblebeeServices/ReportService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getAllLoans">
-<part name="parameters" element="tns:getAllLoans"/>
+<message name="getCollectionDateRange">
+<part name="parameters" element="tns:getCollectionDateRange"/>
 </message>
-<message name="getAllLoansResponse">
-<part name="parameters" element="tns:getAllLoansResponse"/>
+<message name="getCollectionDateRangeResponse">
+<part name="parameters" element="tns:getCollectionDateRangeResponse"/>
+</message>
+<message name="getTotalCustomers">
+<part name="parameters" element="tns:getTotalCustomers"/>
+</message>
+<message name="getTotalCustomersResponse">
+<part name="parameters" element="tns:getTotalCustomersResponse"/>
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
@@ -16,29 +22,72 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
-<message name="getCollectionDateRange">
-<part name="parameters" element="tns:getCollectionDateRange"/>
+<message name="getAllLoans">
+<part name="parameters" element="tns:getAllLoans"/>
 </message>
-<message name="getCollectionDateRangeResponse">
-<part name="parameters" element="tns:getCollectionDateRangeResponse"/>
+<message name="getAllLoansResponse">
+<part name="parameters" element="tns:getAllLoansResponse"/>
+</message>
+<message name="getTotalProducts">
+<part name="parameters" element="tns:getTotalProducts"/>
+</message>
+<message name="getTotalProductsResponse">
+<part name="parameters" element="tns:getTotalProductsResponse"/>
+</message>
+<message name="getTotalLoans">
+<part name="parameters" element="tns:getTotalLoans"/>
+</message>
+<message name="getTotalLoansResponse">
+<part name="parameters" element="tns:getTotalLoansResponse"/>
+</message>
+<message name="getDayCollection">
+<part name="parameters" element="tns:getDayCollection"/>
+</message>
+<message name="getDayCollectionResponse">
+<part name="parameters" element="tns:getDayCollectionResponse"/>
 </message>
 <portType name="ReportService">
-<operation name="getAllLoans">
-<input wsam:Action="http://shanlk/ReportService/getAllLoansRequest" message="tns:getAllLoans"/>
-<output wsam:Action="http://shanlk/ReportService/getAllLoansResponse" message="tns:getAllLoansResponse"/>
+<operation name="getCollectionDateRange">
+<input wsam:Action="http://shanlk/ReportService/getCollectionDateRangeRequest" message="tns:getCollectionDateRange"/>
+<output wsam:Action="http://shanlk/ReportService/getCollectionDateRangeResponse" message="tns:getCollectionDateRangeResponse"/>
+</operation>
+<operation name="getTotalCustomers">
+<input wsam:Action="http://shanlk/ReportService/getTotalCustomersRequest" message="tns:getTotalCustomers"/>
+<output wsam:Action="http://shanlk/ReportService/getTotalCustomersResponse" message="tns:getTotalCustomersResponse"/>
 </operation>
 <operation name="hello">
 <input wsam:Action="http://shanlk/ReportService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://shanlk/ReportService/helloResponse" message="tns:helloResponse"/>
 </operation>
-<operation name="getCollectionDateRange">
-<input wsam:Action="http://shanlk/ReportService/getCollectionDateRangeRequest" message="tns:getCollectionDateRange"/>
-<output wsam:Action="http://shanlk/ReportService/getCollectionDateRangeResponse" message="tns:getCollectionDateRangeResponse"/>
+<operation name="getAllLoans">
+<input wsam:Action="http://shanlk/ReportService/getAllLoansRequest" message="tns:getAllLoans"/>
+<output wsam:Action="http://shanlk/ReportService/getAllLoansResponse" message="tns:getAllLoansResponse"/>
+</operation>
+<operation name="getTotalProducts">
+<input wsam:Action="http://shanlk/ReportService/getTotalProductsRequest" message="tns:getTotalProducts"/>
+<output wsam:Action="http://shanlk/ReportService/getTotalProductsResponse" message="tns:getTotalProductsResponse"/>
+</operation>
+<operation name="getTotalLoans">
+<input wsam:Action="http://shanlk/ReportService/getTotalLoansRequest" message="tns:getTotalLoans"/>
+<output wsam:Action="http://shanlk/ReportService/getTotalLoansResponse" message="tns:getTotalLoansResponse"/>
+</operation>
+<operation name="getDayCollection">
+<input wsam:Action="http://shanlk/ReportService/getDayCollectionRequest" message="tns:getDayCollection"/>
+<output wsam:Action="http://shanlk/ReportService/getDayCollectionResponse" message="tns:getDayCollectionResponse"/>
 </operation>
 </portType>
 <binding name="ReportServicePortBinding" type="tns:ReportService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getAllLoans">
+<operation name="getCollectionDateRange">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTotalCustomers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -56,7 +105,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getCollectionDateRange">
+<operation name="getAllLoans">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTotalProducts">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTotalLoans">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getDayCollection">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

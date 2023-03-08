@@ -17,6 +17,7 @@
 <xs:complexType name="login">
 <xs:sequence>
 <xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="userID" type="xs:int"/>
 <xs:element name="userName" type="xs:string" minOccurs="0"/>
 <xs:element name="userType" type="xs:string" minOccurs="0"/>
 </xs:sequence>

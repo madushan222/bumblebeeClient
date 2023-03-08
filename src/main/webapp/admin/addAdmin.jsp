@@ -31,6 +31,23 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                     dateFormat: 'yy-mm-dd'
                 });
             } );
+            
+            function check_already_registered(nic)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "../includes/checkuserRegistered.jsp?nic="+nic,
+                    success: function(data)
+                    { 
+                      if(data == 1)
+                      {
+                          alert("Already Registered!");
+                          $("#nic").val("");
+                      }
+
+                    }
+                });
+            }
         </script>    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"-->
@@ -73,7 +90,7 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         </div>
                         <div class="form-group">
                           <label for="nic">NIC:</label>
-                          <input type="text" class="form-control" id="nic" name="nic" autocomplete="off" required>
+                          <input type="text" class="form-control" id="nic" name="nic" onchange="check_already_registered(this.value)" autocomplete="off" required>
                         </div>
                         <div class="form-group">
                           <label for="dob">DOB</label>

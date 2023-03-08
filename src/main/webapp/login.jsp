@@ -13,12 +13,13 @@
         if(new_login.getUserType().equals("A"))
         {   
             session.setAttribute("userType",new_login.getUserType());
-            response.sendRedirect("includes/adminsidebar.jsp");
+            response.sendRedirect("includes/adminDashboard.jsp");
         }
         else if(new_login.getUserType().equals("C"))
         {   
             session.setAttribute("userType",new_login.getUserType());
-            response.sendRedirect("customer/sidebar.jsp");
+            session.setAttribute("userID",new_login.getUserID());
+            response.sendRedirect("includes/customerSidebar.jsp");
         }
             
     }

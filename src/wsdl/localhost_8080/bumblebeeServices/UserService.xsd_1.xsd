@@ -4,6 +4,10 @@
 
 <xs:element name="addUserResponse" type="tns:addUserResponse"/>
 
+<xs:element name="checkUserAlreadyRegistered" type="tns:checkUserAlreadyRegistered"/>
+
+<xs:element name="checkUserAlreadyRegisteredResponse" type="tns:checkUserAlreadyRegisteredResponse"/>
+
 <xs:element name="deleteUser" type="tns:deleteUser"/>
 
 <xs:element name="deleteUserResponse" type="tns:deleteUserResponse"/>
@@ -59,16 +63,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getAdmins">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getAdminsResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="hello">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -81,6 +75,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getAdmins">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAdminsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="deleteUser">
 <xs:sequence>
 <xs:element name="userId" type="xs:int"/>
@@ -88,6 +92,18 @@
 </xs:complexType>
 
 <xs:complexType name="deleteUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUserAlreadyRegistered">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUserAlreadyRegisteredResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

@@ -10,23 +10,11 @@
 <message name="addUserResponse">
 <part name="parameters" element="tns:addUserResponse"/>
 </message>
-<message name="getAdmins">
-<part name="parameters" element="tns:getAdmins"/>
+<message name="getAdmin">
+<part name="parameters" element="tns:getAdmin"/>
 </message>
-<message name="getAdminsResponse">
-<part name="parameters" element="tns:getAdminsResponse"/>
-</message>
-<message name="deleteUser">
-<part name="parameters" element="tns:deleteUser"/>
-</message>
-<message name="deleteUserResponse">
-<part name="parameters" element="tns:deleteUserResponse"/>
-</message>
-<message name="updateAdmin">
-<part name="parameters" element="tns:updateAdmin"/>
-</message>
-<message name="updateAdminResponse">
-<part name="parameters" element="tns:updateAdminResponse"/>
+<message name="getAdminResponse">
+<part name="parameters" element="tns:getAdminResponse"/>
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
@@ -34,11 +22,17 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
-<message name="getAdmin">
-<part name="parameters" element="tns:getAdmin"/>
+<message name="getAdmins">
+<part name="parameters" element="tns:getAdmins"/>
 </message>
-<message name="getAdminResponse">
-<part name="parameters" element="tns:getAdminResponse"/>
+<message name="getAdminsResponse">
+<part name="parameters" element="tns:getAdminsResponse"/>
+</message>
+<message name="updateAdmin">
+<part name="parameters" element="tns:updateAdmin"/>
+</message>
+<message name="updateAdminResponse">
+<part name="parameters" element="tns:updateAdminResponse"/>
 </message>
 <message name="getCustomers">
 <part name="parameters" element="tns:getCustomers"/>
@@ -46,34 +40,50 @@
 <message name="getCustomersResponse">
 <part name="parameters" element="tns:getCustomersResponse"/>
 </message>
+<message name="deleteUser">
+<part name="parameters" element="tns:deleteUser"/>
+</message>
+<message name="deleteUserResponse">
+<part name="parameters" element="tns:deleteUserResponse"/>
+</message>
+<message name="checkUserAlreadyRegistered">
+<part name="parameters" element="tns:checkUserAlreadyRegistered"/>
+</message>
+<message name="checkUserAlreadyRegisteredResponse">
+<part name="parameters" element="tns:checkUserAlreadyRegisteredResponse"/>
+</message>
 <portType name="UserService">
 <operation name="addUser">
 <input wsam:Action="http://shanlk/UserService/addUserRequest" message="tns:addUser"/>
 <output wsam:Action="http://shanlk/UserService/addUserResponse" message="tns:addUserResponse"/>
 </operation>
-<operation name="getAdmins">
-<input wsam:Action="http://shanlk/UserService/getAdminsRequest" message="tns:getAdmins"/>
-<output wsam:Action="http://shanlk/UserService/getAdminsResponse" message="tns:getAdminsResponse"/>
-</operation>
-<operation name="deleteUser">
-<input wsam:Action="http://shanlk/UserService/deleteUserRequest" message="tns:deleteUser"/>
-<output wsam:Action="http://shanlk/UserService/deleteUserResponse" message="tns:deleteUserResponse"/>
-</operation>
-<operation name="updateAdmin">
-<input wsam:Action="http://shanlk/UserService/updateAdminRequest" message="tns:updateAdmin"/>
-<output wsam:Action="http://shanlk/UserService/updateAdminResponse" message="tns:updateAdminResponse"/>
+<operation name="getAdmin">
+<input wsam:Action="http://shanlk/UserService/getAdminRequest" message="tns:getAdmin"/>
+<output wsam:Action="http://shanlk/UserService/getAdminResponse" message="tns:getAdminResponse"/>
 </operation>
 <operation name="hello">
 <input wsam:Action="http://shanlk/UserService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://shanlk/UserService/helloResponse" message="tns:helloResponse"/>
 </operation>
-<operation name="getAdmin">
-<input wsam:Action="http://shanlk/UserService/getAdminRequest" message="tns:getAdmin"/>
-<output wsam:Action="http://shanlk/UserService/getAdminResponse" message="tns:getAdminResponse"/>
+<operation name="getAdmins">
+<input wsam:Action="http://shanlk/UserService/getAdminsRequest" message="tns:getAdmins"/>
+<output wsam:Action="http://shanlk/UserService/getAdminsResponse" message="tns:getAdminsResponse"/>
+</operation>
+<operation name="updateAdmin">
+<input wsam:Action="http://shanlk/UserService/updateAdminRequest" message="tns:updateAdmin"/>
+<output wsam:Action="http://shanlk/UserService/updateAdminResponse" message="tns:updateAdminResponse"/>
 </operation>
 <operation name="getCustomers">
 <input wsam:Action="http://shanlk/UserService/getCustomersRequest" message="tns:getCustomers"/>
 <output wsam:Action="http://shanlk/UserService/getCustomersResponse" message="tns:getCustomersResponse"/>
+</operation>
+<operation name="deleteUser">
+<input wsam:Action="http://shanlk/UserService/deleteUserRequest" message="tns:deleteUser"/>
+<output wsam:Action="http://shanlk/UserService/deleteUserResponse" message="tns:deleteUserResponse"/>
+</operation>
+<operation name="checkUserAlreadyRegistered">
+<input wsam:Action="http://shanlk/UserService/checkUserAlreadyRegisteredRequest" message="tns:checkUserAlreadyRegistered"/>
+<output wsam:Action="http://shanlk/UserService/checkUserAlreadyRegisteredResponse" message="tns:checkUserAlreadyRegisteredResponse"/>
 </operation>
 </portType>
 <binding name="UserServicePortBinding" type="tns:UserService">
@@ -87,25 +97,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getAdmins">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="deleteUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateAdmin">
+<operation name="getAdmin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -123,7 +115,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getAdmin">
+<operation name="getAdmins">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateAdmin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -133,6 +134,24 @@
 </output>
 </operation>
 <operation name="getCustomers">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkUserAlreadyRegistered">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

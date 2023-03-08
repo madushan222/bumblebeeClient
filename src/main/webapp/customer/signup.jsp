@@ -66,6 +66,23 @@
                     $("#dob_error").html("");
                 }
             }
+            
+            function check_already_registered(nic)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "../includes/checkuserRegistered.jsp?nic="+nic,
+                    success: function(data)
+                    { 
+                      if(data == 1)
+                      {
+                          alert("Already Registered!");
+                          $("#nic").val("");
+                      }
+
+                    }
+                });
+            }
         </script>
     </head>
     <body>
@@ -88,7 +105,7 @@
                     </div>
                     <div class="form-group">
                       <label for="nic">NIC:</label>
-                      <input type="text" class="form-control" id="nic" name="nic" autocomplete="off" required>
+                      <input type="text" class="form-control" id="nic" name="nic" autocomplete="off" onchange="check_already_registered(this.value)" required>
                     </div>
                     <div class="form-group">
                       <label for="dob">DOB</label>

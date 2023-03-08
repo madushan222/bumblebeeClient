@@ -13,6 +13,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
 <%@page import="shanlk.UserService"%>
 <%@page import="shanlk.UserService_Service"%>
 <%@page import="shanlk.User"%>
+<%@page import="shanlk.LoanService"%>
+<%@page import="shanlk.LoanService_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -65,7 +67,16 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         UserService proxy = user_service.getUserServicePort();
                         List<User> customers = proxy.getCustomers();
                         int row = 0;
-                        for(User cus : customers){%>
+                        float used_amount = 0;
+                        float loan_balance = 0;
+                        
+                        LoanService_Service loan_service = new LoanService_Service();
+                        LoanService proxy2 = loan_service.getLoanServicePort();
+                        
+                        for(User cus : customers){
+                            used_amount = proxy2.getUserLoanTot(cus.getUserId());
+                            loan_balance = 15000 - used_amount;
+                        %>
                          <tbody>
                         <tr <%if(row%2 == 0){%> class="info" <%}%>>
                             <td><%out.println(cus.getUserId());%></td>
@@ -75,8 +86,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                             <td><%out.println(cus.getAddress1());%> <%out.println(cus.getAddress2());%> <%out.println(cus.getAddress3());%></td>
                             <td><%out.println(cus.getMobile());%></td>
                             <td><%out.println(cus.getEmail());%></td>
-                            <td></td>
-                            <td></td>
+                            <td align="right"><%out.println(loan_balance);%></td>
+                            <td align="right"><%out.println(used_amount);%></td>
                             <td><a href="viewLoans.jsp?userId=<%out.println(cus.getUserId());%>" title="View Loans"><i class="fa fa-money" style="color:green;"></i></a></td>
                         </tr>
                         <%row++;}
