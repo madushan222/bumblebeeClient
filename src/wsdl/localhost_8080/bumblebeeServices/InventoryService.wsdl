@@ -4,53 +4,11 @@
 <xsd:import namespace="http://shanlk/" schemaLocation="http://localhost:8080/bumblebeeServices/InventoryService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getCategories">
-<part name="parameters" element="tns:getCategories"/>
+<message name="getCategory">
+<part name="parameters" element="tns:getCategory"/>
 </message>
-<message name="getCategoriesResponse">
-<part name="parameters" element="tns:getCategoriesResponse"/>
-</message>
-<message name="getBrandsByCatId">
-<part name="parameters" element="tns:getBrandsByCatId"/>
-</message>
-<message name="getBrandsByCatIdResponse">
-<part name="parameters" element="tns:getBrandsByCatIdResponse"/>
-</message>
-<message name="updateProduct">
-<part name="parameters" element="tns:updateProduct"/>
-</message>
-<message name="updateProductResponse">
-<part name="parameters" element="tns:updateProductResponse"/>
-</message>
-<message name="deleteProduct">
-<part name="parameters" element="tns:deleteProduct"/>
-</message>
-<message name="deleteProductResponse">
-<part name="parameters" element="tns:deleteProductResponse"/>
-</message>
-<message name="updateBrand">
-<part name="parameters" element="tns:updateBrand"/>
-</message>
-<message name="updateBrandResponse">
-<part name="parameters" element="tns:updateBrandResponse"/>
-</message>
-<message name="updateStatus">
-<part name="parameters" element="tns:updateStatus"/>
-</message>
-<message name="updateStatusResponse">
-<part name="parameters" element="tns:updateStatusResponse"/>
-</message>
-<message name="addProduct">
-<part name="parameters" element="tns:addProduct"/>
-</message>
-<message name="addProductResponse">
-<part name="parameters" element="tns:addProductResponse"/>
-</message>
-<message name="getProducts">
-<part name="parameters" element="tns:getProducts"/>
-</message>
-<message name="getProductsResponse">
-<part name="parameters" element="tns:getProductsResponse"/>
+<message name="getCategoryResponse">
+<part name="parameters" element="tns:getCategoryResponse"/>
 </message>
 <message name="getBrands">
 <part name="parameters" element="tns:getBrands"/>
@@ -58,29 +16,11 @@
 <message name="getBrandsResponse">
 <part name="parameters" element="tns:getBrandsResponse"/>
 </message>
-<message name="deleteCategory">
-<part name="parameters" element="tns:deleteCategory"/>
-</message>
-<message name="deleteCategoryResponse">
-<part name="parameters" element="tns:deleteCategoryResponse"/>
-</message>
-<message name="updateCategory">
-<part name="parameters" element="tns:updateCategory"/>
-</message>
-<message name="updateCategoryResponse">
-<part name="parameters" element="tns:updateCategoryResponse"/>
-</message>
 <message name="getBrand">
 <part name="parameters" element="tns:getBrand"/>
 </message>
 <message name="getBrandResponse">
 <part name="parameters" element="tns:getBrandResponse"/>
-</message>
-<message name="addCategory">
-<part name="parameters" element="tns:addCategory"/>
-</message>
-<message name="addCategoryResponse">
-<part name="parameters" element="tns:addCategoryResponse"/>
 </message>
 <message name="addBrand">
 <part name="parameters" element="tns:addBrand"/>
@@ -88,23 +28,83 @@
 <message name="addBrandResponse">
 <part name="parameters" element="tns:addBrandResponse"/>
 </message>
+<message name="addProduct">
+<part name="parameters" element="tns:addProduct"/>
+</message>
+<message name="addProductResponse">
+<part name="parameters" element="tns:addProductResponse"/>
+</message>
 <message name="deleteBrand">
 <part name="parameters" element="tns:deleteBrand"/>
 </message>
 <message name="deleteBrandResponse">
 <part name="parameters" element="tns:deleteBrandResponse"/>
 </message>
+<message name="getProducts">
+<part name="parameters" element="tns:getProducts"/>
+</message>
+<message name="getProductsResponse">
+<part name="parameters" element="tns:getProductsResponse"/>
+</message>
+<message name="getBrandsByCatId">
+<part name="parameters" element="tns:getBrandsByCatId"/>
+</message>
+<message name="getBrandsByCatIdResponse">
+<part name="parameters" element="tns:getBrandsByCatIdResponse"/>
+</message>
+<message name="deleteCategory">
+<part name="parameters" element="tns:deleteCategory"/>
+</message>
+<message name="deleteCategoryResponse">
+<part name="parameters" element="tns:deleteCategoryResponse"/>
+</message>
+<message name="updateStatus">
+<part name="parameters" element="tns:updateStatus"/>
+</message>
+<message name="updateStatusResponse">
+<part name="parameters" element="tns:updateStatusResponse"/>
+</message>
+<message name="updateCategory">
+<part name="parameters" element="tns:updateCategory"/>
+</message>
+<message name="updateCategoryResponse">
+<part name="parameters" element="tns:updateCategoryResponse"/>
+</message>
+<message name="updateBrand">
+<part name="parameters" element="tns:updateBrand"/>
+</message>
+<message name="updateBrandResponse">
+<part name="parameters" element="tns:updateBrandResponse"/>
+</message>
+<message name="deleteProduct">
+<part name="parameters" element="tns:deleteProduct"/>
+</message>
+<message name="deleteProductResponse">
+<part name="parameters" element="tns:deleteProductResponse"/>
+</message>
+<message name="updateProduct">
+<part name="parameters" element="tns:updateProduct"/>
+</message>
+<message name="updateProductResponse">
+<part name="parameters" element="tns:updateProductResponse"/>
+</message>
+<message name="addCategory">
+<part name="parameters" element="tns:addCategory"/>
+</message>
+<message name="addCategoryResponse">
+<part name="parameters" element="tns:addCategoryResponse"/>
+</message>
+<message name="getCategories">
+<part name="parameters" element="tns:getCategories"/>
+</message>
+<message name="getCategoriesResponse">
+<part name="parameters" element="tns:getCategoriesResponse"/>
+</message>
 <message name="getProduct">
 <part name="parameters" element="tns:getProduct"/>
 </message>
 <message name="getProductResponse">
 <part name="parameters" element="tns:getProductResponse"/>
-</message>
-<message name="getCategory">
-<part name="parameters" element="tns:getCategory"/>
-</message>
-<message name="getCategoryResponse">
-<part name="parameters" element="tns:getCategoryResponse"/>
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
@@ -113,73 +113,73 @@
 <part name="parameters" element="tns:helloResponse"/>
 </message>
 <portType name="InventoryService">
-<operation name="getCategories">
-<input wsam:Action="http://shanlk/InventoryService/getCategoriesRequest" message="tns:getCategories"/>
-<output wsam:Action="http://shanlk/InventoryService/getCategoriesResponse" message="tns:getCategoriesResponse"/>
-</operation>
-<operation name="getBrandsByCatId">
-<input wsam:Action="http://shanlk/InventoryService/getBrandsByCatIdRequest" message="tns:getBrandsByCatId"/>
-<output wsam:Action="http://shanlk/InventoryService/getBrandsByCatIdResponse" message="tns:getBrandsByCatIdResponse"/>
-</operation>
-<operation name="updateProduct">
-<input wsam:Action="http://shanlk/InventoryService/updateProductRequest" message="tns:updateProduct"/>
-<output wsam:Action="http://shanlk/InventoryService/updateProductResponse" message="tns:updateProductResponse"/>
-</operation>
-<operation name="deleteProduct">
-<input wsam:Action="http://shanlk/InventoryService/deleteProductRequest" message="tns:deleteProduct"/>
-<output wsam:Action="http://shanlk/InventoryService/deleteProductResponse" message="tns:deleteProductResponse"/>
-</operation>
-<operation name="updateBrand">
-<input wsam:Action="http://shanlk/InventoryService/updateBrandRequest" message="tns:updateBrand"/>
-<output wsam:Action="http://shanlk/InventoryService/updateBrandResponse" message="tns:updateBrandResponse"/>
-</operation>
-<operation name="updateStatus">
-<input wsam:Action="http://shanlk/InventoryService/updateStatusRequest" message="tns:updateStatus"/>
-<output wsam:Action="http://shanlk/InventoryService/updateStatusResponse" message="tns:updateStatusResponse"/>
-</operation>
-<operation name="addProduct">
-<input wsam:Action="http://shanlk/InventoryService/addProductRequest" message="tns:addProduct"/>
-<output wsam:Action="http://shanlk/InventoryService/addProductResponse" message="tns:addProductResponse"/>
-</operation>
-<operation name="getProducts">
-<input wsam:Action="http://shanlk/InventoryService/getProductsRequest" message="tns:getProducts"/>
-<output wsam:Action="http://shanlk/InventoryService/getProductsResponse" message="tns:getProductsResponse"/>
+<operation name="getCategory">
+<input wsam:Action="http://shanlk/InventoryService/getCategoryRequest" message="tns:getCategory"/>
+<output wsam:Action="http://shanlk/InventoryService/getCategoryResponse" message="tns:getCategoryResponse"/>
 </operation>
 <operation name="getBrands">
 <input wsam:Action="http://shanlk/InventoryService/getBrandsRequest" message="tns:getBrands"/>
 <output wsam:Action="http://shanlk/InventoryService/getBrandsResponse" message="tns:getBrandsResponse"/>
 </operation>
-<operation name="deleteCategory">
-<input wsam:Action="http://shanlk/InventoryService/deleteCategoryRequest" message="tns:deleteCategory"/>
-<output wsam:Action="http://shanlk/InventoryService/deleteCategoryResponse" message="tns:deleteCategoryResponse"/>
-</operation>
-<operation name="updateCategory">
-<input wsam:Action="http://shanlk/InventoryService/updateCategoryRequest" message="tns:updateCategory"/>
-<output wsam:Action="http://shanlk/InventoryService/updateCategoryResponse" message="tns:updateCategoryResponse"/>
-</operation>
 <operation name="getBrand">
 <input wsam:Action="http://shanlk/InventoryService/getBrandRequest" message="tns:getBrand"/>
 <output wsam:Action="http://shanlk/InventoryService/getBrandResponse" message="tns:getBrandResponse"/>
-</operation>
-<operation name="addCategory">
-<input wsam:Action="http://shanlk/InventoryService/addCategoryRequest" message="tns:addCategory"/>
-<output wsam:Action="http://shanlk/InventoryService/addCategoryResponse" message="tns:addCategoryResponse"/>
 </operation>
 <operation name="addBrand">
 <input wsam:Action="http://shanlk/InventoryService/addBrandRequest" message="tns:addBrand"/>
 <output wsam:Action="http://shanlk/InventoryService/addBrandResponse" message="tns:addBrandResponse"/>
 </operation>
+<operation name="addProduct">
+<input wsam:Action="http://shanlk/InventoryService/addProductRequest" message="tns:addProduct"/>
+<output wsam:Action="http://shanlk/InventoryService/addProductResponse" message="tns:addProductResponse"/>
+</operation>
 <operation name="deleteBrand">
 <input wsam:Action="http://shanlk/InventoryService/deleteBrandRequest" message="tns:deleteBrand"/>
 <output wsam:Action="http://shanlk/InventoryService/deleteBrandResponse" message="tns:deleteBrandResponse"/>
 </operation>
+<operation name="getProducts">
+<input wsam:Action="http://shanlk/InventoryService/getProductsRequest" message="tns:getProducts"/>
+<output wsam:Action="http://shanlk/InventoryService/getProductsResponse" message="tns:getProductsResponse"/>
+</operation>
+<operation name="getBrandsByCatId">
+<input wsam:Action="http://shanlk/InventoryService/getBrandsByCatIdRequest" message="tns:getBrandsByCatId"/>
+<output wsam:Action="http://shanlk/InventoryService/getBrandsByCatIdResponse" message="tns:getBrandsByCatIdResponse"/>
+</operation>
+<operation name="deleteCategory">
+<input wsam:Action="http://shanlk/InventoryService/deleteCategoryRequest" message="tns:deleteCategory"/>
+<output wsam:Action="http://shanlk/InventoryService/deleteCategoryResponse" message="tns:deleteCategoryResponse"/>
+</operation>
+<operation name="updateStatus">
+<input wsam:Action="http://shanlk/InventoryService/updateStatusRequest" message="tns:updateStatus"/>
+<output wsam:Action="http://shanlk/InventoryService/updateStatusResponse" message="tns:updateStatusResponse"/>
+</operation>
+<operation name="updateCategory">
+<input wsam:Action="http://shanlk/InventoryService/updateCategoryRequest" message="tns:updateCategory"/>
+<output wsam:Action="http://shanlk/InventoryService/updateCategoryResponse" message="tns:updateCategoryResponse"/>
+</operation>
+<operation name="updateBrand">
+<input wsam:Action="http://shanlk/InventoryService/updateBrandRequest" message="tns:updateBrand"/>
+<output wsam:Action="http://shanlk/InventoryService/updateBrandResponse" message="tns:updateBrandResponse"/>
+</operation>
+<operation name="deleteProduct">
+<input wsam:Action="http://shanlk/InventoryService/deleteProductRequest" message="tns:deleteProduct"/>
+<output wsam:Action="http://shanlk/InventoryService/deleteProductResponse" message="tns:deleteProductResponse"/>
+</operation>
+<operation name="updateProduct">
+<input wsam:Action="http://shanlk/InventoryService/updateProductRequest" message="tns:updateProduct"/>
+<output wsam:Action="http://shanlk/InventoryService/updateProductResponse" message="tns:updateProductResponse"/>
+</operation>
+<operation name="addCategory">
+<input wsam:Action="http://shanlk/InventoryService/addCategoryRequest" message="tns:addCategory"/>
+<output wsam:Action="http://shanlk/InventoryService/addCategoryResponse" message="tns:addCategoryResponse"/>
+</operation>
+<operation name="getCategories">
+<input wsam:Action="http://shanlk/InventoryService/getCategoriesRequest" message="tns:getCategories"/>
+<output wsam:Action="http://shanlk/InventoryService/getCategoriesResponse" message="tns:getCategoriesResponse"/>
+</operation>
 <operation name="getProduct">
 <input wsam:Action="http://shanlk/InventoryService/getProductRequest" message="tns:getProduct"/>
 <output wsam:Action="http://shanlk/InventoryService/getProductResponse" message="tns:getProductResponse"/>
-</operation>
-<operation name="getCategory">
-<input wsam:Action="http://shanlk/InventoryService/getCategoryRequest" message="tns:getCategory"/>
-<output wsam:Action="http://shanlk/InventoryService/getCategoryResponse" message="tns:getCategoryResponse"/>
 </operation>
 <operation name="hello">
 <input wsam:Action="http://shanlk/InventoryService/helloRequest" message="tns:hello"/>
@@ -188,70 +188,7 @@
 </portType>
 <binding name="InventoryServicePortBinding" type="tns:InventoryService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getCategories">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getBrandsByCatId">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateProduct">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="deleteProduct">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateBrand">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateStatus">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addProduct">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getProducts">
+<operation name="getCategory">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -269,34 +206,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="deleteCategory">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateCategory">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="getBrand">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addCategory">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -314,6 +224,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="addProduct">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="deleteBrand">
 <soap:operation soapAction=""/>
 <input>
@@ -323,7 +242,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getProduct">
+<operation name="getProducts">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -332,7 +251,88 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getCategory">
+<operation name="getBrandsByCatId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteCategory">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateStatus">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateCategory">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateBrand">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteProduct">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateProduct">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addCategory">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getCategories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getProduct">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

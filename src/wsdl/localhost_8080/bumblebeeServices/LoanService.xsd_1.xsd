@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://shanlk/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://shanlk/">
+
+<xs:element name="getLoanShedule" type="tns:getLoanShedule"/>
+
+<xs:element name="getLoanSheduleResponse" type="tns:getLoanSheduleResponse"/>
+
+<xs:element name="getLoans" type="tns:getLoans"/>
+
+<xs:element name="getLoansResponse" type="tns:getLoansResponse"/>
+
+<xs:element name="getUserLoanTot" type="tns:getUserLoanTot"/>
+
+<xs:element name="getUserLoanTotResponse" type="tns:getUserLoanTotResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoans">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoansResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:loan" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loan">
+<xs:sequence>
+<xs:element name="customer_name" type="xs:string" minOccurs="0"/>
+<xs:element name="end_date" type="xs:string" minOccurs="0"/>
+<xs:element name="loan_amount" type="xs:string" minOccurs="0"/>
+<xs:element name="loan_id" type="xs:int"/>
+<xs:element name="product_name" type="xs:string" minOccurs="0"/>
+<xs:element name="start_date" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoanShedule">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoanSheduleResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:loanShedule" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loanShedule">
+<xs:sequence>
+<xs:element name="due_date" type="xs:string" minOccurs="0"/>
+<xs:element name="ins_amount" type="xs:float"/>
+<xs:element name="paid_amount" type="xs:float"/>
+<xs:element name="pay_date" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserLoanTot">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserLoanTotResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

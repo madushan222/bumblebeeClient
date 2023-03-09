@@ -19,5 +19,7 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_UserService>http://localhost:8080/bumblebeeServices/UserService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_UserService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_LoginService>http://localhost:8080/bumblebeeServices/LoginService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_LoginService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_InventoryService>http://localhost:8080/bumblebeeServices/InventoryService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_InventoryService>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_LoanService>http://localhost:8080/bumblebeeServices/LoanService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_LoanService>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_ReportService>http://localhost:8080/bumblebeeServices/ReportService?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_ReportService>
     </properties>
 </project-shared-configuration>

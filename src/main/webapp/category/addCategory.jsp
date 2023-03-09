@@ -74,13 +74,13 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
               </div>
             </div>
             <hr>
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Category ID</th>
                         <th>Name</th>
                         <th>Status</th>
-                        <th></th>
+                        <th colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,8 +90,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                         List<Category> categories = proxy.getCategories();
                         int row = 0;
                         for(Category cat : categories){%>
-                        <tr <%if(row%2 == 0){%> class="info" <%}%>>
                             <tbody>
+                        <tr <%if(row%2 == 0){%> class="info" <%}%>>
                             <td><%out.println(cat.getCatId());%></td>
                             <td><%out.println(cat.getName());%></td>
                             <td><%out.println(cat.getStatus());%></td>
@@ -101,9 +101,8 @@ if(session.getAttribute("userType") == null || session.getAttribute("userType").
                                     <a href="deleteCategory.jsp?catId=<%out.println(cat.getCatId());%>" title="Delete"><i class="fa fa-trash" style="color:red;"></i></a>
                                 <%}%>
                             </td>
-                            </tbody>
                         </tr>
-                        <%}
+                        <%row++;}
                     %>
                 </tbody>
             </table>

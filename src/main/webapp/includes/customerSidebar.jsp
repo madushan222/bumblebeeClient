@@ -214,23 +214,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="../includes/adminDashboard.jsp">BumbleBee</a>
+			<a class="navbar-brand" href="../includes/customerSidebar.jsp">BumbleBee</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="../admin/addAdmin.jsp">Admin<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="../admin/customerlist.jsp">Customer<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="../category/addCategory.jsp">Add Category<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt"></span></a></li>
-                                <li ><a href="../brand/addBrand.jsp">Add Brand<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tag"></span></a></li>
-                                <li ><a href="../product/addProduct.jsp">Add Product<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-barcode"></span></a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="../reports/inventoryReport.jsp">Inventory Report</a></li>
-						<li><a href="../reports/CustomerDetails.jsp">Customer Detail Report</a></li>
-					</ul>
-				</li>
+				<li class="active"><a href="../customer/loanView.jsp">My Loans<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
 				<li><a href="../logOut.jsp">Log Out<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
 			
 			</ul>

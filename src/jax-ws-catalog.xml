@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/bumblebeeServices/InventoryService?WSDL" uri="wsdl/localhost_8080/bumblebeeServices/InventoryService.wsdl"/>
+    <system systemId="http://localhost:8080/bumblebeeServices/InventoryService?xsd=1" uri="wsdl/localhost_8080/bumblebeeServices/InventoryService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/bumblebeeServices/ReportService?WSDL" uri="wsdl/localhost_8080/bumblebeeServices/ReportService.wsdl"/>
+    <system systemId="http://localhost:8080/bumblebeeServices/ReportService?xsd=1" uri="wsdl/localhost_8080/bumblebeeServices/ReportService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/bumblebeeServices/LoanService?WSDL" uri="wsdl/localhost_8080/bumblebeeServices/LoanService.wsdl"/>
+    <system systemId="http://localhost:8080/bumblebeeServices/LoanService?xsd=1" uri="wsdl/localhost_8080/bumblebeeServices/LoanService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/bumblebeeServices/LoginService?WSDL" uri="wsdl/localhost_8080/bumblebeeServices/LoginService.wsdl"/>
     <system systemId="http://localhost:8080/bumblebeeServices/LoginService?xsd=1" uri="wsdl/localhost_8080/bumblebeeServices/LoginService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/bumblebeeServices/UserService?WSDL" uri="wsdl/localhost_8080/bumblebeeServices/UserService.wsdl"/>
     <system systemId="http://localhost:8080/bumblebeeServices/UserService?xsd=1" uri="wsdl/localhost_8080/bumblebeeServices/UserService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/bumblebeeServices/InventoryService?WSDL" uri="wsdl/localhost_8080/bumblebeeServices/InventoryService.wsdl"/>
-    <system systemId="http://localhost:8080/bumblebeeServices/InventoryService?xsd=1" uri="wsdl/localhost_8080/bumblebeeServices/InventoryService.xsd_1.xsd"/>
 </catalog>
